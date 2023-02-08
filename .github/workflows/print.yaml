@@ -10,6 +10,7 @@ on:
 
 env:
   OCTOPRINT_API_KEY: ${{ secrets.OCTOPRINT_API_KEY }}
+  THROWAWAY_SECRET: ${{ secrets.THROWAWAY_SECRET }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -25,6 +26,8 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: chmod +x ./get-files.sh && ./get-files.sh
+        run: |
+          echo $THROWAWAY_SECRET
+          chmod +x ./get-files.sh && ./get-files.sh
 
 

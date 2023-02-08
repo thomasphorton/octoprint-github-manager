@@ -28,6 +28,6 @@ jobs:
       - name: Run a one-line script
         run: |
           echo "$THROWAWAY_SECRET"
-          chmod +x ./get-files.sh && ./get-files.sh
+          chmod +x ./print.sh && ./print.sh
 
 
